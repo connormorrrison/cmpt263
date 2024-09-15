@@ -26,13 +26,12 @@ def display_combinations(current_combinations):
     result = {}
     for coin in current_combinations:
         result[coin] = result.get(coin, 0) + 1
-    
-    # Print in format
+
     formatted_strings = []
     for coin, count in result.items():
-        formatted_string = f"{count}@{coin}"
+        formatted_string = f"{coin}@{count}"
         formatted_strings.append(formatted_string)
-    
+
     output = ", ".join(formatted_strings)
     print(output)
 
@@ -41,10 +40,7 @@ def main():
     amount = int(input(""))
     coins = [200, 100, 50, 25, 10, 5, 1]
 
-    # Special case where amount = 0
-    if amount == 0:
-        print("0@0")
-        return None
+    
 
     # Calculate results
     calculate_combinations(amount, coins, current_combinations=[], current_index=0)
