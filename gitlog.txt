@@ -1,0 +1,63 @@
+commit 6bca13fd991402b19e7067bf935ce26e3cd7d04c
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Wed Sep 18 12:47:14 2024 -0600
+
+    Tweaked test cases to add additional test cases
+
+commit c8acde0195403a8f56a6ba488b9f244ad4be1e01
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sun Sep 15 02:11:46 2024 -0600
+
+    Updated printing format to print in the  format: coin occurance, coin denomination
+
+commit b3b617744f082452584facb5a60dd66a08561488
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sun Sep 15 01:37:59 2024 -0600
+
+    Completed initial implementation of 'display_combinations' function
+    - Implemented loop to add coin denominations and occurance counts to dict
+    - Format coin and occurance counts in desired printing format
+    - Prints in desired output format
+
+commit beca8de7f794ea57cbdbc9cbb5d8bbe2b6a49c15
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sun Sep 15 00:03:21 2024 -0600
+
+    Continued implementation of 'calculate_combinations' function
+    - Completed recursive case, subtracting coin denomination from amount and appending to list
+
+commit 79934683365094ccdf0dde2645f7c44bf291ee64
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sat Sep 14 05:59:51 2024 -0600
+
+    Continued implementation of change.py
+    - Reformatted functions to 'calculate_combinations' and 'display_combinations'
+    - Added base case for calc_combo func
+    - Began work on recursive case for calc_combo
+
+commit e6a2a4cc6ea69591051437310480949ffe6417ba
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Fri Sep 13 13:35:05 2024 -0600
+
+    Added change.py file
+    - Added main function with coin denominations
+    - Added find_combinations and display_results functions, missing logic
+    - Added student information
+
+commit 44276b26655193cf9bb7d28adfaf290f840f9813
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Fri Sep 13 13:08:10 2024 -0600
+
+    Added test case files #2-5
+
+commit fc503c827b1e8d8b94c3af8e57f2acdab393824d
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Fri Sep 13 12:50:40 2024 -0600
+
+    Added A0 project directory, test and bin subdirectories and initial test1 files
+
+commit 4074509eb195f73e8db1c17f30f88aa3f247fed7
+Author: Chris Dutchyn (cjd032) <dutchyn@cs.usask.ca>
+Date:   Wed Sep 11 12:58:53 2024 -0600
+
+    Initial Commit
