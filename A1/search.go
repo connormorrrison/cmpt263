@@ -5,3 +5,7 @@ Student Number: 11374770
 Course: CMPT 263
 */
 
+// Get user input
+func main() {
+	
+}
