@@ -13,8 +13,20 @@ import (
 )
 
 // Process each query
-func processQuery(numStuNum int, numQuer int, stuNums int) {
+func processQuery(query int, studentNumbers []int, numStudentNumbers int) {
+	registered := false ;
+	for i := 0; i < numStudentNumbers; i++ {
+		if query == studentNumbers[i] {
+			registered = true ;
+			break ;
+		}
+	}
 
+	if registered == true {
+		fmt.Printf("Student %d is registered.\n", query) ;
+	} else {
+		fmt.Printf("Student %d is NOT registered.\n", query) ;
+	}
 }
 
 // Get user input
@@ -49,9 +61,10 @@ func main() {
 		var query int ;
 		_, err := fmt.Scanf("%d", &query) ;
 		if err != nil {
-			os.Exit(1)
+			os.Exit(1) ;
 		}
 
-		// Offload process logic to processQuery function
-		processQuery(numStudentNumbers, numQueries, studentNumbers)
+		// Compare query against recorded student numbers
+		processQuery(query, studentNumbers, numStudentNumbers) ;
+	}
 }
