@@ -12,6 +12,11 @@ import (
 	"os" ;
 )
 
+// Process each query
+func processQuery(numStuNum int, numQuer int, stuNums int) {
+
+}
+
 // Get user input
 func main() {
 	var numStudentNumbers int ;
@@ -39,31 +44,14 @@ func main() {
 
 	fmt.Println("studentNumbers:", studentNumbers) ;	// TEST
 
+	// Process each query
+	for i := 0; i < numQueries; i++ {
+		var query int ;
+		_, err := fmt.Scanf("%d", &query) ;
+		if err != nil {
+			os.Exit(1)
+		}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	// // Read all student numbers into a single line
-	// var input string ;
-	// _, err = fmt.Scanln(&input)
-	// if err != nil {
-	// 	os.Exit(1) ;
-	// }
-	
-	// fmt.Println(input)	// TEST
+		// Offload process logic to processQuery function
+		processQuery(numStudentNumbers, numQueries, studentNumbers)
 }
