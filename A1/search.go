@@ -38,7 +38,7 @@ func main() {
 
 	// Read in user input
 	_, err := fmt.Scanf("%d %d", &numStudentNumbers, &numQueries) ;
-	if err != nil {
+	if err != nil || numStudentNumbers < 0 || numQueries < 0 {
 		os.Exit(1) ;
 	}
 
@@ -61,7 +61,7 @@ func main() {
 	for i := 0; i < numQueries; i++ {
 		var query int ;
 		_, err := fmt.Scanf("%d", &query) ;
-		if err != nil {
+		if err != nil || query < 0 {
 			os.Exit(1) ;
 		}
 
