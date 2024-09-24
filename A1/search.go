@@ -12,9 +12,11 @@ import (
 	"os" ;
 )
 
-// Process each query
+// Function processes each query
 func processQuery(query int, studentNumbers []int, numStudentNumbers int) {
 	registered := false ;
+
+	// Iterate through student numbers
 	for i := 0; i < numStudentNumbers; i++ {
 		if query == studentNumbers[i] {
 			registered = true ;
@@ -29,7 +31,7 @@ func processQuery(query int, studentNumbers []int, numStudentNumbers int) {
 	}
 }
 
-// Get user input
+// Main function processes user input
 func main() {
 	var numStudentNumbers int ;
 	var numQueries int ;
@@ -43,10 +45,9 @@ func main() {
 	// fmt.Println("numStudentNumbers:", numStudentNumbers) ;	// TEST
 	// fmt.Println("numQueries:", numQueries) ;	// TEST
 
-	
-	// Read the student numbers from the same line
 	studentNumbers := make([]int, numStudentNumbers) ;
 
+	// Read in student numbers from the same line
 	for i := 0; i < numStudentNumbers; i++ {
 		_, err := fmt.Scan(&studentNumbers[i]) ;
 		if err != nil {
@@ -54,7 +55,7 @@ func main() {
 		}
 	}
 
-	fmt.Println("studentNumbers:", studentNumbers) ;	// TEST
+	// fmt.Println("studentNumbers:", studentNumbers) ;	// TEST
 
 	// Process each query
 	for i := 0; i < numQueries; i++ {
