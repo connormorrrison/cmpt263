@@ -32,6 +32,7 @@ func processQuery(query int, studentNumbers []int, numStudentNumbers int) {
 }
 
 // Main function processes user input
+//*@requires numStudentNumbers, numQueries >= 0
 func main() {
 	var numStudentNumbers int ;
 	var numQueries int ;
@@ -68,4 +69,5 @@ func main() {
 		// Compare query against recorded student numbers
 		processQuery(query, studentNumbers, numStudentNumbers) ;
 	}
+	//*@ensures program exits with error code (1) if any input error is detected
 }
