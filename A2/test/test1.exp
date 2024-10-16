@@ -1,0 +1,4 @@
+Sorted Set: [2 5 6 10 12]
+Query: 10 -> Found at index 3
+Query: 2 -> Found at index 0
+Query: 8 -> Not Found
