@@ -12,8 +12,8 @@ func Isort(arr [] int) []int {
 	for i := 1; i < len(arr); i++ {
 		
 		// Set markers
-		key := arr[i]	// Current value
-		j := i - 1	// Previous index
+		key := arr[i];	// Current value
+		j := i - 1;	// Previous index
 
 		// Inner loop moves elements greater than key to the right
 		for j >= 0 && arr[j] > key {

@@ -11,61 +11,53 @@ import (
 	"fmt";
 	"os";
 	"a2/sort";
-	//"a2/sparse"
+	"a2/sparse"
 )
 
-// Function processes each query
-func processQuery(query int, studentNumbers []int, numStudentNumbers int) {
-	registered := false;
+// // Function processes each query
+// func processQuery(query int, studentNumbers []int, numStudentNumbers int) {
+// 	registered := false;
 
-	// Iterate through student numbers
-	for i := 0; i < numStudentNumbers; i++ {
-		if query == studentNumbers[i] {
-			registered = true;
-			break;
-		}
-	}
+// 	// Iterate through student numbers
+// 	for i := 0; i < numStudentNumbers; i++ {
+// 		if query == studentNumbers[i] {
+// 			registered = true;
+// 			break;
+// 		}
+// 	}
 
-	if registered == true {
-		fmt.Printf("Student %d is registered.\n", query);
-	} else {
-		fmt.Printf("Student %d is NOT registered.\n", query);
-	}
-}
+// 	if registered == true {
+// 		fmt.Printf("Student %d is registered.\n", query);
+// 	} else {
+// 		fmt.Printf("Student %d is NOT registered.\n", query);
+// 	}
+// }
 
 // Main function processes user input
 //*@requires numStudentNumbers, numQueries >= 0
 func main() {
-	// Testing
-	// Sample array to be sorted
-	arr := []int{12, 5, 10, 6, 2}
-
-	// Print the original array
-	fmt.Println("Original array:", arr)
-
-	// Call Isort to sort the array
-	sortedArr := sort.Isort(arr)
-
-	// Print the sorted array
-	fmt.Println("Sorted array:", sortedArr)
+	// arr := []int{12, 5, 10, 6, 2};	// TEST
+	// fmt.Println("Original array:", arr);	// TEST
+	// 	sortedArr := sort.Isort(arr);	// TEST
+	// 	fmt.Println("Sorted array:", sortedArr);	// TEST
 	
-	var numStudentNumbers int;
+	var numValues int;
 	var numQueries int;
 
 	// Read in user input
-	_, err := fmt.Scanf("%d %d", &numStudentNumbers, &numQueries);
-	if err != nil || numStudentNumbers < 0 || numQueries < 0 {
+	_, err := fmt.Scanf("%d %d", &numValues, &numQueries);
+	if err != nil || numValues < 0 || numQueries < 0 {
 		os.Exit(1);
 	}
 
 	// fmt.Println("numStudentNumbers:", numStudentNumbers);	// TEST
 	// fmt.Println("numQueries:", numQueries);	// TEST
 
-	studentNumbers := make([]int, numStudentNumbers);
+	values := make([]int, numValues);
 
 	// Read in student numbers from the same line
-	for i := 0; i < numStudentNumbers; i++ {
-		_, err := fmt.Scan(&studentNumbers[i]);
+	for i := 0; i < numValues; i++ {
+		_, err := fmt.Scan(&values[i]);
 		if err != nil {
 			os.Exit(1);
 		}
@@ -73,11 +65,10 @@ func main() {
 
 	// fmt.Println("studentNumbers:", studentNumbers);	// TEST
 
-	// Srt the student numbers using isort
-	//sortedNumbers := sort.Isort(studentNumbers);
-	//fmt.Println(sortedNumbers)
+	// Sort student numbers using isort()
+	sortedValues := sort.Isort(values);
+	fmt.Println(sortedValues);
 	
-
 	// Process each query
 	for i := 0; i < numQueries; i++ {
 		var query int ;
@@ -86,8 +77,12 @@ func main() {
 			os.Exit(1);
 		}
 
-		// Compare query against recorded student numbers
-		processQuery(query, studentNumbers, numStudentNumbers);
+		// Search the sorted array using find()
+		found, position := sparse.Find(values, query)
+		
+
+		fmt.Println(found)
+		fmt.Println(position)
 	}
 	//*@ensures program exits with error code (1) if any input error is detected
 }
