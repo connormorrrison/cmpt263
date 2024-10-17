@@ -8,8 +8,7 @@ Course: CMPT 263
 package sparse
 
 func Find(arr []int, query int) (bool, int) {
-	found := false;
-	position := -1;
+	firstOccurrence := -1;
 
 	low := 0;
 	high := len(arr) - 1;
@@ -19,9 +18,8 @@ func Find(arr []int, query int) (bool, int) {
 		mid := (low + high) / 2;
 
 		if arr[mid] == query {
-			found = true;
-			position = mid;
-			break;
+			firstOccurrence = mid;
+			high = mid - 1;	// Continue searching the left half to find first occurrence
 		} else if arr[mid] < query {
 			low = mid + 1;
 		} else {
@@ -29,5 +27,9 @@ func Find(arr []int, query int) (bool, int) {
 		}
 	}
 
-	return found, position;
+	if firstOccurrence != -1 {
+		return true, firstOccurrence;
+	}
+	
+	return false, -1;
 }
