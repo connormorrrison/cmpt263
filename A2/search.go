@@ -21,7 +21,7 @@ func main() {
 	var numQueries int;
 
 	// Read in user input
-	_, err := fmt.Scanf("%d %d", &numValues, &numQueries);
+	_, err := fmt.Scan(&numValues, &numQueries);
 	if err != nil || numValues < 0 || numQueries < 0 {
 		os.Exit(1);
 	}
@@ -44,19 +44,19 @@ func main() {
 	// Process each query
 	for i := 0; i < numQueries; i++ {
 		var query int ;
-		_, err := fmt.Scanf("%d", &query);
-		if err != nil || query < 0 {
+		_, err := fmt.Scan(&query);
+		if err != nil {
 			os.Exit(1);
 		}
 
 		// Search the sorted array using find()
-		found, position := sparse.Find(values, query)
+		found, position := sparse.Find(sortedValues, query)
 
 		fmt.Printf("Query: %d -> ", query);
 		if found {
 			fmt.Printf("Found at index %d\n", position);
 		} else {
-			fmt.Println("Not Found")
+			fmt.Println("Not found")
 		}
 
 	//*@ensures program exits with error code (1) if any input error is detected
