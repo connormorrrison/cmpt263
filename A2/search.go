@@ -10,6 +10,8 @@ package main
 import (
 	"fmt";
 	"os";
+	"a2/sort";
+	//"a2/sparse"
 )
 
 // Function processes each query
@@ -34,6 +36,19 @@ func processQuery(query int, studentNumbers []int, numStudentNumbers int) {
 // Main function processes user input
 //*@requires numStudentNumbers, numQueries >= 0
 func main() {
+	// Testing
+	// Sample array to be sorted
+	arr := []int{12, 5, 10, 6, 2}
+
+	// Print the original array
+	fmt.Println("Original array:", arr)
+
+	// Call Isort to sort the array
+	sortedArr := sort.Isort(arr)
+
+	// Print the sorted array
+	fmt.Println("Sorted array:", sortedArr)
+	
 	var numStudentNumbers int;
 	var numQueries int;
 
@@ -57,6 +72,11 @@ func main() {
 	}
 
 	// fmt.Println("studentNumbers:", studentNumbers);	// TEST
+
+	// Srt the student numbers using isort
+	//sortedNumbers := sort.Isort(studentNumbers);
+	//fmt.Println(sortedNumbers)
+	
 
 	// Process each query
 	for i := 0; i < numQueries; i++ {
