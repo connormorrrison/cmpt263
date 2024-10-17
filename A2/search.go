@@ -14,33 +14,9 @@ import (
 	"a2/sparse"
 )
 
-// // Function processes each query
-// func processQuery(query int, studentNumbers []int, numStudentNumbers int) {
-// 	registered := false;
-
-// 	// Iterate through student numbers
-// 	for i := 0; i < numStudentNumbers; i++ {
-// 		if query == studentNumbers[i] {
-// 			registered = true;
-// 			break;
-// 		}
-// 	}
-
-// 	if registered == true {
-// 		fmt.Printf("Student %d is registered.\n", query);
-// 	} else {
-// 		fmt.Printf("Student %d is NOT registered.\n", query);
-// 	}
-// }
-
 // Main function processes user input
 //*@requires numStudentNumbers, numQueries >= 0
 func main() {
-	// arr := []int{12, 5, 10, 6, 2};	// TEST
-	// fmt.Println("Original array:", arr);	// TEST
-	// 	sortedArr := sort.Isort(arr);	// TEST
-	// 	fmt.Println("Sorted array:", sortedArr);	// TEST
-	
 	var numValues int;
 	var numQueries int;
 
@@ -50,9 +26,7 @@ func main() {
 		os.Exit(1);
 	}
 
-	// fmt.Println("numStudentNumbers:", numStudentNumbers);	// TEST
-	// fmt.Println("numQueries:", numQueries);	// TEST
-
+	// Initalize array for values
 	values := make([]int, numValues);
 
 	// Read in student numbers from the same line
@@ -63,11 +37,9 @@ func main() {
 		}
 	}
 
-	// fmt.Println("studentNumbers:", studentNumbers);	// TEST
-
 	// Sort student numbers using isort()
 	sortedValues := sort.Isort(values);
-	fmt.Println(sortedValues);
+	fmt.Printf("Sorted Set: %v\n", sortedValues);
 	
 	// Process each query
 	for i := 0; i < numQueries; i++ {
@@ -79,10 +51,14 @@ func main() {
 
 		// Search the sorted array using find()
 		found, position := sparse.Find(values, query)
-		
 
-		fmt.Println(found)
-		fmt.Println(position)
-	}
+		fmt.Printf("Query: %d -> ", query);
+		if found {
+			fmt.Printf("Found at index %d\n", position);
+		} else {
+			fmt.Println("Not Found")
+		}
+
 	//*@ensures program exits with error code (1) if any input error is detected
+	}
 }
