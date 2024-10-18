@@ -11,7 +11,7 @@ import (
 	"fmt";
 	"os";
 	"a2/sort";
-	"a2/sparse"
+	"a2/sparse";
 )
 
 // Main function processes user input
@@ -32,7 +32,7 @@ func main() {
 	// Read in student numbers from the same line
 	for i := 0; i < numValues; i++ {
 		_, err := fmt.Scan(&values[i]);
-		if err != nil {
+		if err != nil || values[i] < 0 {
 			os.Exit(1);
 		}
 	}
@@ -43,22 +43,21 @@ func main() {
 	
 	// Process each query
 	for i := 0; i < numQueries; i++ {
-		var query int ;
+		var query int;
 		_, err := fmt.Scan(&query);
-		if err != nil {
+		if err != nil || query < 0 {
 			os.Exit(1);
 		}
 
 		// Search the sorted array using find()
-		found, position := sparse.Find(sortedValues, query)
+		found, position := sparse.Find(sortedValues, query);
 
 		fmt.Printf("Query: %d -> ", query);
 		if found {
 			fmt.Printf("Found at index %d\n", position);
 		} else {
-			fmt.Println("Not found")
+			fmt.Println("Not found");
 		}
-
-	//*@ensures program exits with error code (1) if any input error is detected
 	}
 }
+//*@ensures program exits with error code (1) if any input error is detected
