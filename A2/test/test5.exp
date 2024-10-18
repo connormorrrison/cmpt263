@@ -1,4 +1,4 @@
-Sorted Set: [-8 -3 -1 1 2 4]
-Query: 4 -> Found at index 5
-Query: -8 -> Found at index 0
+Sorted Set: [1 2 3 4 5 8]
+Query: 4 -> Found at index 3
+Query: 8 -> Found at index 5
 Query: 0 -> Not found
