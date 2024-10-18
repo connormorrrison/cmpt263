@@ -15,7 +15,7 @@ import (
 )
 
 // Main function processes user input
-//*@requires numStudentNumbers, numQueries >= 0
+//*@requires numValues, numQueries >= 0
 func main() {
 	var numValues int;
 	var numQueries int;

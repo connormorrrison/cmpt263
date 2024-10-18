@@ -8,12 +8,13 @@ Course: CMPT 263
 package sparse
 
 // Find function locates the index of the query search value
+//*@requires arr is a sorted array of integers; query is an integer
 func Find(arr []int, query int) (bool, int) {
 	// Precondition: { arr is a sorted array of integers; query is an integer }
-	// { arr is sorted in ascending order; query ∈ ℤ }
+	// { arr is sorted in ascending order; query element of integers }
 	
 	firstOccurrence := -1;
-	// { firstOccurrence == -1; arr is sorted; query ∈ ℤ }
+	// { firstOccurrence == -1; arr is sorted; query element of integers }
 
 	low := 0;
 	// { low == 0; firstOccurrence == -1 }
@@ -21,7 +22,7 @@ func Find(arr []int, query int) (bool, int) {
 	high := len(arr) - 1;
 	// { high == len(arr) - 1; low == 0; firstOccurrence == -1 }
 
-	// Loop Invariant I:
+	// Loop invariant I:
 	// { 
     // - arr is sorted in ascending order;
     // - If query occurs in arr, it is within indices [low, high];
@@ -32,7 +33,7 @@ func Find(arr []int, query int) (bool, int) {
 		// { I holds at the start of the loop; low <= high }
 		
 		mid := (low + high) / 2;
-		// { mid == (low + high) / 2; low ≤ mid <= high; I holds }
+		// { mid == (low + high) / 2; low <= mid <= high; I holds }
 
 		if arr[mid] == query {
 			// { arr[mid] == query; I holds }
@@ -40,7 +41,7 @@ func Find(arr []int, query int) (bool, int) {
 			// { firstOccurrence == mid; arr[firstOccurrence] == query }
 
 			high = mid - 1;	// Continue searching the left half to find first occurrence
-			// { Updated high; search space reduced to [low, mid - 1]; I holds for next iteration }
+			// { Updated high; search reduced to [low, mid - 1]; I holds for next iteration }
 		} else if arr[mid] < query {
 			// { arr[mid] < query; I holds }
 			low = mid + 1;
@@ -64,3 +65,4 @@ func Find(arr []int, query int) (bool, int) {
 	return false, -1;
 	// Postcondition: { returns (false, -1); query not found in arr }
 }
+//*@ensures returns (true, index) if query is found in arr at index; returns (false, -1) if query is not found

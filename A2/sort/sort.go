@@ -8,6 +8,7 @@ Course: CMPT 263
 package sort
 
 // Isort function performs insertion sort
+//*@requires arr is an array of integers
 func Isort(arr [] int) []int {
 	// Pre-condition: { arr is an array of integers of length n }
 	// { arr is an array of integers of length n }
@@ -34,7 +35,7 @@ func Isort(arr [] int) []int {
 			j = j - 1;
 			// { j decreased by 1; I2 holds }
 		}
-		// { arr[0..j] ≤ key ≤ arr[j+1..i-1]; I2 holds }
+		// { arr[0..j] <= key <= arr[j+1..i-1]; I2 holds }
 
 		arr[j+1] = key;
 		// { arr[0..i] is sorted in ascending order; I1 holds for next iteration }
@@ -46,3 +47,4 @@ func Isort(arr [] int) []int {
 
 	return arr;
 }
+//*@ensures returns arr sorted in ascending order
