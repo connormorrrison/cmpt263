@@ -2,6 +2,7 @@ package main;
 
 import "fmt";
 
+// Each node contains a MONSTER data type
 type Monster struct {
 	Name string;
 	InitiativeModifier int;
@@ -9,4 +10,13 @@ type Monster struct {
 	ArmourClass int;
 	AttackRating int;
 }
+
+// Define NodeType for const expression
+type NodeType int;
+
+const (
+	HEAD NodeType = iota
+	NODE
+	TAIL
+)
 

@@ -1,0 +1,14 @@
+append Goblin 2 1 15 3
+append Orc -1 2 13 5
+prepend Dragon 5 10 18 10
+prepend Elf 3 2 12 4
+len
+get -1
+get -2
+get -3
+get -4
+shift
+drop
+len
+get 1
+get 2
