@@ -14,7 +14,7 @@ type Dequeue interface {
 	Prepend(m Monster) Dequeue;
 	Append(m Monster) Dequeue;
 	Len() int;
-	Get(i int) (bool, Monster);
+	Get(i int) (bool, Monster);  // bool if Monster was found
 	Shift();
 	Drop();
 }
@@ -53,7 +53,7 @@ func (h *HEAD) Prepend(m Monster) Dequeue {
 
 func (h *HEAD) Append(m Monster) Dequeue {
 	// TODO
-	return h;
+	return h.next.Append(m);
 }
 
 func (h *HEAD) Len() int {
@@ -63,7 +63,7 @@ func (h *HEAD) Len() int {
 
 func (h *HEAD) Get(i int) (bool, Monster) {
 	// TODO
-	return false, Monster{};
+	return h.next.Len();
 }
 
 func (h *HEAD) Shift() {
