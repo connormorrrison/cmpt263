@@ -1,7 +1,0 @@
-get 1
-shift
-drop
-append Knight 4 5 16 8
-get 0
-get 2
-get -2
