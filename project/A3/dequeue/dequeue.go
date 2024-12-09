@@ -27,8 +27,8 @@ type HEAD struct {
 // NODE variant: contains Monster and links prev and next nodes
 type NODE struct {
 	data Monster;
-	prev Dequeue;
 	next Dequeue;
+	prev Dequeue;
 }
 
 // TAIL variant: end of dequeue
@@ -37,28 +37,49 @@ type TAIL struct {
 }
 
 func MakeDequeue() Dequeue {
-	head := &HEAD{};
-	tail := &TAIL{};
-	head.next = tail;
-	tail.prev = head;
-	return head;
+	// Create HEAD and TAIL
+	var head HEAD;
+	var tail TAIL;
+
+	// Link head and tail together
+	head.next = &tail;
+	tail.prev = &head;
+
+	// Return the head
+	return &head;
 }
 
 // HEAD methods
 
 func (h *HEAD) Prepend(m Monster) Dequeue {
 	// TODO
-	return h; // return h just to compile
+	n := &NODE{data: m, prev: h, next: h.next};
+	switch nxt := h.next.(type) {
+	// If the next node is a NODE
+	case *NODE:
+		nxt.prev = n;
+	// If the next node is a TAIL
+	case *TAIL:
+		nxt.prev = n;
+	}
+	h.next = n;
+	return h;
 }
 
 func (h *HEAD) Append(m Monster) Dequeue {
 	// TODO
-	return h.next.Append(m);
+	newNext := h.next.Append(m);
+	return &HEAD{next: newNext};
 }
 
 func (h *HEAD) Len() int {
 	// TODO
-	return 0;
+	switch h.next.(type) {
+	case *TAIL:
+		return 0;
+	default:
+		return h.next.Len();
+	}
 }
 
 func (h *HEAD) Get(i int) (bool, Monster) {
