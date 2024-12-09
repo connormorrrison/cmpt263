@@ -49,6 +49,20 @@ func MakeDequeue() Dequeue {
 	return &head;
 }
 
+// Finds head, starting at tail
+func backwardTraverse(d Dequeue) *HEAD {
+	switch target := d.(type) {
+	case *HEAD:
+		return target;
+	case *NODE:
+		return backwardTraverse(target.prev);
+	case *TAIL:
+		return backwardTraverse(target.prev);
+	}
+	return nil;
+}
+
+
 // HEAD methods
 
 func (h *HEAD) Prepend(m Monster) Dequeue {
@@ -84,7 +98,7 @@ func (h *HEAD) Len() int {
 
 func (h *HEAD) Get(i int) (bool, Monster) {
 	// TODO
-	return h.next.Len();
+	return h.next.Get(i);
 }
 
 func (h *HEAD) Shift() {
@@ -96,42 +110,12 @@ func (h *HEAD) Drop() {
 }
 
 
-// TAIL methods
-
-func (t *TAIL) Prepend(m Monster) Dequeue {
-	// TODO
-	return t;
-}
-
-func (t *TAIL) Append(m Monster) Dequeue {
-	// TODO
-	return t;
-}
-
-func (t *TAIL) Len() int {
-	// TODO
-	return 0;
-}
-
-func (t *TAIL) Get(i int) (bool, Monster) {
-	// TODO
-	return false, Monster{};
-}
-
-func (t *TAIL) Shift() {
-	// TODO
-}
-
-func (t *TAIL) Drop() {
-	// TODO
-}
-
-
 // NODE methods
 
 func (n *NODE) Prepend(m Monster) Dequeue {
 	// TODO
-	return n;
+	h := backwardTraverse(n);
+	return h.Prepend(m);
 }
 
 func (n *NODE) Append(m Monster) Dequeue {
@@ -156,3 +140,48 @@ func (n *NODE) Shift() {
 func (n *NODE) Drop() {
 	// TODO
 }
+
+
+// TAIL methods
+
+// Prepend adds a new Monster to the front of the dequeue
+func (t *TAIL) Prepend(m Monster) Dequeue {
+	h := backwardTraverse(t);
+	return h.Prepend(m);
+}
+
+// Append adds a new Monster to the end of the dequeue
+func (t *TAIL) Append(m Monster) Dequeue {
+	// Insert a NODE before the TAIL
+	n := &NODE{data: m, next: t, prev: t.prev};
+	switch p := t.prev.(type) {
+	case *HEAD:
+		p.next = n;
+	case *NODE:
+		p.next = n;
+	}
+	t.prev = n;
+	return backwardTraverse(t);
+}
+
+// Len returns the length of the tail; always 0
+func (t *TAIL) Len() int {
+	return 0;
+}
+
+// Get always returns false and empty monster for TAIL
+func (t *TAIL) Get(i int) (bool, Monster) {
+	return false, Monster{};
+}
+
+// Shift returns the dequeue unchanged for TAIL
+func (t *TAIL) Shift() {
+	// TODO
+}
+
+func (t *TAIL) Drop() {
+	// TODO
+}
+
+
+
