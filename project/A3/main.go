@@ -1,3 +1,8 @@
+// Note: For this assignment I am choosing this option: complete 
+// Assignment 3 but not Assignment Four, and have the assignment 
+// weight transferred across the first three assignments (each wil
+// become 6.67% of the overall course grade)
+
 package main;
 
 import (
@@ -8,9 +13,11 @@ import (
 
 func main() {
 	// Create sample monsters
-	m1 := dequeue.Monster{Name: "Godzilla", InitiativeModifier: 0, ChallengeRating: 1, ArmourClass: 13, AttackRating: -1};
-	m2 := dequeue.Monster{Name: "Bigfoot", InitiativeModifier: 2, ChallengeRating: 2, ArmourClass: 15, AttackRating: 0};
-	m3 := dequeue.Monster{Name: "Dracula", InitiativeModifier: 5, ChallengeRating: 3, ArmourClass: 18, AttackRating: 5};
+	m1 := dequeue.Monster{Name: "Godzilla", InitiativeModifier: 10, ChallengeRating: 2, ArmourClass: 15, AttackRating: -10};
+    m2 := dequeue.Monster{Name: "Bigfoot", InitiativeModifier: 10, ChallengeRating: 2, ArmourClass: 15, AttackRating: -10};
+    m3 := dequeue.Monster{Name: "Dracula", InitiativeModifier: 10, ChallengeRating: 2, ArmourClass: 15, AttackRating: -10};
+    m4 := dequeue.Monster{Name: "Werewolf", InitiativeModifier: 10, ChallengeRating: 2, ArmourClass: 15, AttackRating: -10};
+    m5 := dequeue.Monster{Name: "Dragon", InitiativeModifier: 10, ChallengeRating: 2, ArmourClass: 15, AttackRating: -10};
 
 	dq := dequeue.MakeDequeue();
 
