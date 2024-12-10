@@ -1,0 +1,309 @@
+commit f7abb49c2100d3d0d4121a4dec9fa3a4115ab8af
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Mon Dec 9 23:33:19 2024 -0600
+
+    Finalized implementation of dequeue.go
+    
+    - Implemented extensive comments including /@* requires and /@* ensures function comments
+    - Added logic, invariant, and variant comments where necessary
+    - Included additional test cases in main() of main.go
+    - Additional formatting of HEAD and NODE functions
+
+commit dc63d04b87bd61fb5469ec331e481e5be182d641
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Mon Dec 9 22:02:38 2024 -0600
+
+    Additional documentation and commenting added
+
+commit a562be583ef5f414f3638c1a838c5bfe1c3a8fea
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Mon Dec 9 21:41:07 2024 -0600
+
+    Continued implementation for get and drop methods for head
+    
+    - Inital implementation of Get method in HEAD and TAIL structures
+    - Intial implementation of Drop method in HEAD and TAIL
+    - Use of helper functions getFromHead, getfromTail and findHead
+
+commit 55dc7ab037c8c8dbf08623d33bcc7eb017903baa
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Mon Dec 9 20:08:38 2024 -0600
+
+    Implementation changes on append, prepend, len funcs across head, node and tail
+    
+    - Corrections in prev and next pointers
+    - Additional documentation added
+
+commit 167d82c7ac657dfe6906b1076c06b0298a1627d6
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Mon Dec 9 14:57:04 2024 -0600
+
+    Continued development of dequeue.go file
+    
+    - Added backwardTraverse method for backward walking from tail
+    - Implemented TAIL methods, prependm append, len and get
+    - Further implementation of TAIL shift and drop functions needed, as well as additonal NODE and HEAD function implementations
+
+commit a0c1715ae09adac1c2848308a22a4dee73d9fc0f
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Mon Dec 9 04:46:56 2024 -0600
+
+    Added initial implementations of head prepend, append and len functions
+
+commit 6f22d0d9c22b9a19c48b07c98be6cb7738de0665
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sun Dec 8 17:55:05 2024 -0600
+
+    Added additional small test cases in main.go
+
+commit 2cff1860557895b8714db2a5c1ca0648be269cd8
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sun Dec 8 05:26:24 2024 -0600
+
+    Updated main.go, dequeue.go, and removed test files
+    
+    - Removed test files as testing will now be done in main() in main.go
+    - Created sample Monster for testing
+    - Implemented MakeDequeue func to initialize a new dequeue with HEAD and TAIL
+    - Added placeholder methods for HEAD, NODE and TAIL
+
+commit b4fec2d99b88ba47f879b57e82712ec0037be9e4
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sun Dec 1 22:34:35 2024 -0600
+
+    Created test file #6 and moved original dequeue data struct defintions to dequeue.go
+
+commit 17fe270bd4e07080193bc0439ba7fa16f41d4169
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sun Dec 1 21:14:36 2024 -0600
+
+    Updated main.go to include updated Node variant definitions and NodeOperations interface
+    
+    - Node variants are separated into distinct type definitions
+    - Node operations interface defined
+
+commit 1bfcc8d9ff57552b2c4bc681f822b4b405e0d398
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sun Dec 1 20:04:48 2024 -0600
+
+    Added .in and .exp test cases 1-5
+
+commit d248ecb9894362d70b71dce1f69e2839dc2a4c2e
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sat Nov 30 21:07:33 2024 -0600
+
+    Add main.go file with Monster struct definition in A3
+
+commit 619192fc5ff3a0c67444842291893014b2fbf26d
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sat Nov 30 20:56:19 2024 -0600
+
+    Add project directory with A3 and A4 subdirectories
+
+commit 4f5c564691f6fd535fbf0993328bde53900ebdb3
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Fri Oct 18 12:18:46 2024 -0600
+
+    Slight update to test case 5
+
+commit ea880a50fed44b0a8c32fc938366b7cedbc1bb7e
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Fri Oct 18 12:05:12 2024 -0600
+
+    Adjusted comments and documentation slightly
+
+commit e1c07e73f4c00f8b8454558f86760dbdbdbe5d0d
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Fri Oct 18 11:51:19 2024 -0600
+
+    Added negative value rejection in search.go, and comment logic in find.go and sort.go
+
+commit a8aa1d89862d5e85ab8199e2b1916825e20bec71
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Thu Oct 17 02:20:38 2024 -0600
+
+    Removed < 0 condition in search.go to properly handle negative query values and updated slight capitalization of test case formatting
+
+commit 7ec163fb369b46fe3eb1e71719704cc47d002aa0
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Thu Oct 17 01:35:13 2024 -0600
+
+    Updated find.go to handle multiple occurrences, using first as the returned index
+
+commit 3f5f5aed08681b28cb21b9483fe0989908c55188
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Wed Oct 16 23:20:06 2024 -0600
+
+    Added code to display results in main function
+
+commit a40f72f2c755291698bb26676cf9ee1cec8a361c
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Wed Oct 16 22:03:37 2024 -0600
+
+    Initial find.go algorithm utilizing binary search implemented
+
+commit fe6fc0f5a2542a78a572e43b39d329d163e57135
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Wed Oct 16 21:15:02 2024 -0600
+
+    Added initial insertion sort algorithm
+
+commit 8efecf805beb363addb58137e6ecfbcb41deecd8
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Wed Oct 16 13:51:25 2024 -0600
+
+    Updated project structure to contain sort and sparse packages
+
+commit fcb6edd0f5d2fae137d2f8a177d0311b66a17df3
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Wed Oct 16 12:55:11 2024 -0600
+
+    Added search.go to project
+
+commit 702de9233cabace95641e8795aefd4ab9edd7f06
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Wed Oct 16 10:22:48 2024 -0600
+
+    Added variety of test cases 1-10
+
+commit 2397772c10c4bfa751e0764658cf791d42d4c3bf
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Thu Oct 10 23:52:53 2024 -0600
+
+    Initial commit for assignment 2, created A2 directory and test subdirectory
+
+commit 4ece2b60101c3ab34891605368b62ade86cfda00
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Fri Sep 27 12:57:18 2024 -0600
+
+    Added gitlog.txt to project
+
+commit 6be92b40ce494b259c7e94f49e96650b74c3868b
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Fri Sep 27 12:33:46 2024 -0600
+
+    Added additional comments for main function
+
+commit de1654343f057ad9bffbb0c869df58f2aaaf45b2
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Tue Sep 24 16:41:20 2024 -0600
+
+    Added input handling for negative values
+
+commit 4c700cea0572203fbf5b60db3c4646f507decfdc
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Tue Sep 24 02:33:35 2024 -0600
+
+    Testing complete with all test cases passing
+
+commit 5895c087e9cc539b67b9c6e10d90b33847e3c73c
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Tue Sep 24 02:09:05 2024 -0600
+
+    Added initial version of processQuery function, looping through student number slice; and prints match/no match result
+
+commit bb800c539a0ed4dd066e55bfb09da4acee7e7638
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Tue Sep 24 01:36:22 2024 -0600
+
+    Added loop to process each query; added processQuery function - logic implementation pending
+
+commit 7b999af33fafe4b88e65b6aa2b28a08c325097eb
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Tue Sep 24 00:55:32 2024 -0600
+
+    Added slice declaration and for loop to read in student numbers input from the same line
+
+commit 08359fe671b14ccc2d9b35bc118e7d18b9ef306c
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Mon Sep 23 13:04:57 2024 -0600
+
+    Added user input reading in main function
+
+commit 52b05799a62c689f31698f6cdc2e522011d34b1f
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Mon Sep 23 12:46:11 2024 -0600
+
+    Added test7.in/exp
+
+commit e82f055cb603982cd4f700913db479948e40075a
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Mon Sep 23 09:13:05 2024 -0600
+
+    Created initial search.go file with student information
+
+commit 1e9f69e906aefd0fd0af03e88a6281f22a37d319
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Mon Sep 23 09:07:03 2024 -0600
+
+    Added initial test cases test1.in/exp-test6.in/exp
+
+commit cdc39ab32b3361754838a325379bd096e2bf799f
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Wed Sep 18 13:00:49 2024 -0600
+
+    Added A0.tar and gitlog.txt to git log
+
+commit 6bca13fd991402b19e7067bf935ce26e3cd7d04c
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Wed Sep 18 12:47:14 2024 -0600
+
+    Tweaked test cases to add additional test cases
+
+commit c8acde0195403a8f56a6ba488b9f244ad4be1e01
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sun Sep 15 02:11:46 2024 -0600
+
+    Updated printing format to print in the  format: coin occurance, coin denomination
+
+commit b3b617744f082452584facb5a60dd66a08561488
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sun Sep 15 01:37:59 2024 -0600
+
+    Completed initial implementation of 'display_combinations' function
+    - Implemented loop to add coin denominations and occurance counts to dict
+    - Format coin and occurance counts in desired printing format
+    - Prints in desired output format
+
+commit beca8de7f794ea57cbdbc9cbb5d8bbe2b6a49c15
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sun Sep 15 00:03:21 2024 -0600
+
+    Continued implementation of 'calculate_combinations' function
+    - Completed recursive case, subtracting coin denomination from amount and appending to list
+
+commit 79934683365094ccdf0dde2645f7c44bf291ee64
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Sat Sep 14 05:59:51 2024 -0600
+
+    Continued implementation of change.py
+    - Reformatted functions to 'calculate_combinations' and 'display_combinations'
+    - Added base case for calc_combo func
+    - Began work on recursive case for calc_combo
+
+commit e6a2a4cc6ea69591051437310480949ffe6417ba
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Fri Sep 13 13:35:05 2024 -0600
+
+    Added change.py file
+    - Added main function with coin denominations
+    - Added find_combinations and display_results functions, missing logic
+    - Added student information
+
+commit 44276b26655193cf9bb7d28adfaf290f840f9813
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Fri Sep 13 13:08:10 2024 -0600
+
+    Added test case files #2-5
+
+commit fc503c827b1e8d8b94c3af8e57f2acdab393824d
+Author: Connor Morrison <113166048+connormorrrison@users.noreply.github.com>
+Date:   Fri Sep 13 12:50:40 2024 -0600
+
+    Added A0 project directory, test and bin subdirectories and initial test1 files
+
+commit 4074509eb195f73e8db1c17f30f88aa3f247fed7
+Author: Chris Dutchyn (cjd032) <dutchyn@cs.usask.ca>
+Date:   Wed Sep 11 12:58:53 2024 -0600
+
+    Initial Commit
